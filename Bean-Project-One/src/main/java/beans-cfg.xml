@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  	
+  	<bean id="s5" class="in.serosoft.projects.entity.Second">
+		<property name="id" value="1"/>
+		<property name="name" value="Bannu"/>
+		<property name="experiance" value="27"/>
+		<property name="salary" value="3400000"/>
+	</bean>
+	
+	<bean id="s6" class="in.serosoft.projects.entity.Second">
+		<property name="id" value="2"/>
+		<property name="name" value="Geetha"/>
+		<property name="experiance" value="23"/>
+		<property name="salary" value="340000"/>
+	</bean>
+	
+	<bean id="s7" class="in.serosoft.projects.entity.Second">
+		<property name="id" value="1"/>
+		<property name="name" value="Bannu"/>
+		<property name="experiance" value="27"/>
+		<property name="salary" value="3400000"/>
+	</bean>
+	
+	<bean id="first" class="in.serosoft.projects.entity.First">
+		<property name="id" value="67"/>
+		<property name="name" value="Surya"/>
+		<property name="age" value="34"/>
+		<property name="mobile" value="6745656545"/>
+		<property name="second">
+			<bean id="second" class="in.serosoft.projects.entity.Second">
+				<property name="id" value="2"/>
+				<property name="name" value="Geetha"/>
+				<property name="experiance" value="34"/>
+				<property name="salary" value="340000"/>
+			</bean>
+		</property>
+		<property name="stringList">
+			<list>
+				<value>Sona</value>
+				<value>Anju</value>
+				<value>Kavya</value>
+				<value>Asha</value>
+				<value>Sona</value>
+			</list>
+		</property>
+		<property name="stringSet">
+			<set>
+				<value>Sona</value>
+				<value>Anju</value>
+				<value>Kavya</value>
+				<value>Asha</value>
+				<value>Sona</value>
+			</set>
+		</property>
+		<property name="secondList">
+		<list>
+			<bean id="s1" class="in.serosoft.projects.entity.Second">
+				<property name="id" value="1"/>
+				<property name="name" value="Bannu"/>
+				<property name="experiance" value="27"/>
+				<property name="salary" value="3400000"/>
+			</bean>
+			<bean id="s2" class="in.serosoft.projects.entity.Second">
+				<property name="id" value="2"/>
+				<property name="name" value="Geetha"/>
+				<property name="experiance" value="23"/>
+				<property name="salary" value="340000"/>
+			</bean>
+			<ref bean="s5"/>
+			<ref bean="s5"/>
+		</list>
+		</property>
+		<property name="secondSet">
+		<set>
+			<ref bean="s5"/>
+			<ref bean="s6"/>
+			<ref bean="s5"/>
+		</set>
+		</property>
+		<property name="secondMap">
+		<map>
+			<entry key="Geetha" value="5"/>
+			<entry key="Bannu" value="10"/>
+		</map>
+		</property>
+	</bean>
+  
+</beans>
